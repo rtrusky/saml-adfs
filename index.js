@@ -21,7 +21,7 @@ var samlConfig = {
     entryPoint: 'https://integrifyadfs.integrify.com/adfs/ls',
     issuer: "integrify-saml-client",
     protocol: "https://",
-    cert: fs.readFileSync(path.join(__dirname,"integrifyadfs.crt"), 'utf-8'),
+    //cert: fs.readFileSync(path.join(__dirname,"integrifyadfs.crt"), 'utf-8'),
     acceptedClockSkewMs: -1,
     authnContext: 'http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows',
     identifierFormat: null
