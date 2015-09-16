@@ -34,7 +34,7 @@ var samlConfig = {
 var samlStrat = new SamlStrategy(
     samlConfig,
     function(profile, done) {
-        findByEmail(profile.email, function(err, user) {
+        findByEmail(profile, function(err, user) {
             if (err) {
                 return done(err);
             }
