@@ -1,0 +1,19 @@
+{
+  "name": "integrify-saml-adfs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Integrify Inc. <npm@interify.com> (http://www.integrify.com)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.0",
+    "passport-saml": "^0.12.0",
+    "ramda": "^0.17.1"
+  }
+}
