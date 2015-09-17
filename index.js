@@ -5,7 +5,6 @@
 var passport = require("passport")
 var R = require ("ramda")
 var SamlStrategy = require('passport-saml').Strategy
-//var SamlStrategy = require('./lib/passport-saml/index').Strategy
 var bodyParser = require('body-parser')
 var logger = require('morgan');
 var fs = require ("fs")
@@ -24,7 +23,7 @@ var samlConfig = {
     protocol: "https://",
     cert: fs.readFileSync(path.join(__dirname,"integrifyadfs.crt"), 'utf-8'),
     acceptedClockSkewMs: -1,
-    authnContext: 'http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows',
+    authnContext: 'http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password',
     identifierFormat: null,
     signatureAlgorithm: 'sha256'
 
@@ -76,7 +75,7 @@ app.get('/mock', function(re,res){
 app.post('/login/callback',
     passport.authenticate('saml', { session:false, failureRedirect: '/', failureFlash: true }),
     function(req, res) {
-        
+
 
         res.json(req.user)
     }
