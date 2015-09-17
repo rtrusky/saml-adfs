@@ -76,7 +76,8 @@ app.get('/mock', function(re,res){
 app.post('/login/callback',
     passport.authenticate('saml', { session:false, failureRedirect: '/', failureFlash: true }),
     function(req, res) {
-        res.redirect('/');
+        res.type('application/json');
+        res.send(res.user)
     }
 );
 
