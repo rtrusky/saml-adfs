@@ -77,6 +77,7 @@ app.post('/login/callback',
     passport.authenticate('saml', { session:false, failureRedirect: '/', failureFlash: true }),
     function(req, res) {
         res.type('application/json');
+        console.log(req)
         res.send(res.user)
     }
 );
