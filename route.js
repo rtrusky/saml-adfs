@@ -12,10 +12,12 @@ var express = require('express');
 var app = express();
 var integrifyAuth = require("./integrify-auth")
 var url = require("url")
+var cookieParser = require("cookie-parser")
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 
 var config = false;
@@ -24,7 +26,7 @@ var config = false;
 try {
    config =  require("./config.js")
     if  (config.samlStrategy.cert) {
-        config.samlStrategy.cert = fs.readFileSync(path.join(__dirname,config.saml.cert), 'utf-8')
+        config.samlStrategy.cert = fs.readFileSync(path.join(__dirname,config.samlStrategy.cert), 'utf-8')
     }
 }
 catch (e) {
