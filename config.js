@@ -4,7 +4,7 @@ var config = {
         entryPoint: 'https://integrifyadfs.integrify.com/adfs/ls',
         issuer: "integrify-saml-client",
         protocol: "https://",
-        cert: "idp-adsf.crt",
+        cert: "idp-adfs.crt",
         acceptedClockSkewMs: -1,
         authnContext: 'http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password',
         identifierFormat: null,
